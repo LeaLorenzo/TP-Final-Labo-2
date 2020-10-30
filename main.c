@@ -8,7 +8,7 @@
 #define arCliente "cliente.dat"
 #define arConsumos "consumos.dat"
 const char ESC = 27;
-
+// prueba git hub
 typedef struct
 {
     int  id; /// campo único y autoincremental probando github
