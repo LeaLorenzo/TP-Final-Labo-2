@@ -1,0 +1,8 @@
+Calificación	7,00 / 10,00
+Calificado sobre	Saturday, 4 de July de 2020, 08:32
+Calificado por	Imagen de Sergio GarguirSergio Garguir
+Comentarios de retroalimentación	
+En carga de clientes debería preguntarte si querés seguir cargando.
+Recuerden que el id es solo para control interno del sistema, el usuario no debe conocer el id. Las búsquedas deben ser por nroCliente, dni o apellido
+Los consumos deberían mostrarse con los datos del cliente
+Buen trabajo, mejorenlo para el cuatrimestre que viene

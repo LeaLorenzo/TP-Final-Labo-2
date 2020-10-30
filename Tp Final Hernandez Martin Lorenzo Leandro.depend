@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1490112217 source:c:\users\marti\onedrive\escritorio\tincho facu\practica laboratorio\tp final hernandez martin lorenzo leandro\pila.c
+	"pila.h"
+
+1490112217 c:\users\marti\onedrive\escritorio\tincho facu\practica laboratorio\tp final hernandez martin lorenzo leandro\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1592836888 source:c:\users\marti\onedrive\escritorio\tincho facu\practica laboratorio\tp final hernandez martin lorenzo leandro\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"pila.h"
+
+1593474084 source:e:\recursada prog y labo\tp final labo\pila.c
+	"pila.h"
+
+1593474090 e:\recursada prog y labo\tp final labo\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1593474084 source:d:\recursada prog y labo\tp final labo\pila.c
+	"pila.h"
+
+1593474090 d:\recursada prog y labo\tp final labo\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1593816598 source:d:\recursada prog y labo\tp final labo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"pila.h"
+	<windows.h>
+
+1593744402 source:d:\recursada prog y labo\tp final labo\gotoxy.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
