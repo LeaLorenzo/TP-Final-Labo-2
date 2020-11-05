@@ -40,3 +40,55 @@
 	<stdlib.h>
 	<windows.h>
 
+1604095862 source:d:\2do año\tp final labo 2\tp-final-labo-2\gotoxy.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1604095862 source:d:\2do año\tp final labo 2\tp-final-labo-2\pila.c
+	"pila.h"
+
+1604095862 d:\2do año\tp final labo 2\tp-final-labo-2\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1604530864 source:d:\2do año\tp final labo 2\tp-final-labo-2\lista.c
+	"lista.h"
+	<stdio.h>
+
+1604535190 d:\2do año\tp final labo 2\tp-final-labo-2\lista.h
+	"archivoConsumos.h"
+	"archivoClientes.h"
+
+1604437282 source:d:\2do año\tp final labo 2\tp-final-labo-2\archivoclientes.c
+	"archivoClientes.h"
+	<stdio.h>
+
+1604519078 d:\2do año\tp final labo 2\tp-final-labo-2\archivoclientes.h
+	"archivoConsumos.h"
+
+1604439502 source:d:\2do año\tp final labo 2\tp-final-labo-2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"pila.h"
+	<windows.h>
+	"archivoClientes.h"
+	"archivoConsumos.h"
+	"lista.h"
+
+1604433522 source:d:\2do año\tp final labo 2\tp-final-labo-2\arbol.c
+	"arbol.h"
+
+1604435526 d:\2do año\tp final labo 2\tp-final-labo-2\arbol.h
+	"archivoClientes.h"
+	"lista.h"
+
+1604519046 d:\2do año\tp final labo 2\tp-final-labo-2\archivoconsumos.h
+	"archivoClientes.h"
+
+1604437176 source:d:\2do año\tp final labo 2\tp-final-labo-2\archivoconsumos.c
+	"archivoConsumos.h"
+	<stdio.h>
+
