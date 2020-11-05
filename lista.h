@@ -20,5 +20,11 @@ nodoLista* borrarNodo(nodoLista* lista, char apellido[20]);
 nodoLista* agregarEnOrden(nodoLista* lista, nodoLista* nuevoNodo);
 nodoLista* borrarTodaLaLista(nodoLista* lista);
 int sumarConsumosLista(nodoLista* lista);
+nodoLista* eliminaPrimerNodo(nodoLista* lista);
+nodoLista* eliminarUltimoNodo(nodoLista* lista);
+void mostrarUnNodo(nodoLista* aMostar);
+void mostrarLista(nodoLista* lista);
+
+
 
 #endif // LISTA_H_INCLUDED

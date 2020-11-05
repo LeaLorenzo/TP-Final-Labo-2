@@ -222,3 +222,70 @@ int sumarConsumosLista(nodoLista* lista)
     }
     return suma;
 }
+
+/*********************************************************//**
+/*
+/* \brief  Eliminia el primer nodo de una lista
+/* \param  Una variable puntero al comienzo de la lista.
+/* \return Retorna la lista.
+/*
+/************************************************************/
+nodoLista* eliminaPrimerNodo(nodoLista* lista)
+{
+    nodoLista* aux = lista;
+    lista = lista->siguiente;
+    free(aux);
+    return lista;
+}
+
+/*********************************************************//**
+/*
+/* \brief  Eliminia el ultimo nodo de una lista
+/* \param  Una variable puntero al comienzo de la lista.
+/* \return Retorna la lista.
+/*
+/************************************************************/
+nodoLista* eliminarUltimoNodo(nodoLista* lista)
+{
+    nodoLista* aux = lista;
+    nodoLista* ante;
+    while(aux->siguiente)
+    {
+        ante = aux;
+        aux = aux->siguiente;
+    }
+    free(aux);
+    ante->siguiente = NULL;
+    return lista;
+}
+
+/*********************************************************//**
+/*
+/* \brief  Muestra los datos de un cliente, modularizando con la función de mostrarUnCliente
+/* \param  Una variable puntero aMostrar.
+/* \return No retorna nada, es de tipo void.
+/*
+/************************************************************/
+void mostrarUnNodo(nodoLista* aMostar)
+{
+    printf("\n Datos Cliente: \n");
+    mostrarUnCliente(aMostar->datoCliente);
+}
+
+/*********************************************************//**
+/*
+/* \brief  Muestra la lista. Utiliza la función mostrarUnNodo modularizada.
+/* \param  Una variable puntero al comienzo de la lista.
+/* \return No retorna nada, es de tipo void.
+/*
+/************************************************************/
+void mostrarLista(nodoLista* lista) // recorrer y mostrar //
+{
+    nodoLista* seg = lista;
+    while(seg)
+    {
+        mostrarUnNodo(seg);
+        seg = seg->siguiente;
+    }
+}
+
