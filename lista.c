@@ -266,7 +266,7 @@ nodoLista* eliminarUltimoNodo(nodoLista* lista)
 /* \return No retorna nada, es de tipo void.
 /*
 /************************************************************/
-void mostrarUnNodo(nodoLista* aMostar)
+void mostrarUnNodoCliente(nodoLista* aMostar)
 {
     printf("\n Datos Cliente: \n");
     mostrarUnCliente(aMostar->datoCliente);
@@ -274,18 +274,47 @@ void mostrarUnNodo(nodoLista* aMostar)
 
 /*********************************************************//**
 /*
-/* \brief  Muestra la lista. Utiliza la función mostrarUnNodo modularizada.
+/* \brief  Muestra la lista Cliente. Utiliza la función mostrarUnNodoCliente modularizada.
 /* \param  Una variable puntero al comienzo de la lista.
 /* \return No retorna nada, es de tipo void.
 /*
 /************************************************************/
-void mostrarLista(nodoLista* lista) // recorrer y mostrar //
+void mostrarListaCliente(nodoLista* lista) // recorrer y mostrar //
 {
     nodoLista* seg = lista;
     while(seg)
     {
-        mostrarUnNodo(seg);
+        mostrarUnNodoCliente(seg);
         seg = seg->siguiente;
     }
 }
 
+/*********************************************************//**
+/*
+/* \brief  Muestra los datos de un Consumo, modularizando con la función de mostrarUnConsumo
+/* \param  Una variable puntero aMostrar.
+/* \return No retorna nada, es de tipo void.
+/*
+/************************************************************/
+void mostrarUnNodoConsumo(nodoLista* aMostar)
+{
+    printf("\n Datos Consumo: \n");
+    mostrarUnConsumo(aMostar->datoConsumo);
+}
+
+/*********************************************************//**
+/*
+/* \brief  Muestra la lista Consumo. Utiliza la función mostrarUnNodoConsumo modularizada.
+/* \param  Una variable puntero al comienzo de la lista.
+/* \return No retorna nada, es de tipo void.
+/*
+/************************************************************/
+void mostrarListaConsumo(nodoLista* lista) // recorrer y mostrar //
+{
+    nodoLista* seg = lista;
+    while(seg)
+    {
+        mostrarUnNodoConsumo(seg);
+        seg = seg->siguiente;
+    }
+}
