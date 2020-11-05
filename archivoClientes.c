@@ -87,7 +87,6 @@ void mostrarUnCliente(stCliente c)
     if(c.baja == 0)
     {
         printf("\n  ________________________________________________");
-        printf("\n  Id.........................: %d\n",c.id);
         printf("\n  Nro de Cliente.............: %d\n",c.nroCliente);
         printf("\n  Nombre usuario.............: %s\n",c.nombre);
         printf("\n  Apellido usuario...........: %s\n",c.apellido);
