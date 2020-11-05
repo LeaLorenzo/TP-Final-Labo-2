@@ -22,9 +22,10 @@ nodoLista* borrarTodaLaLista(nodoLista* lista);
 int sumarConsumosLista(nodoLista* lista);
 nodoLista* eliminaPrimerNodo(nodoLista* lista);
 nodoLista* eliminarUltimoNodo(nodoLista* lista);
-void mostrarUnNodo(nodoLista* aMostar);
-void mostrarLista(nodoLista* lista);
-
+void mostrarUnNodoCliente(nodoLista* aMostar);
+void mostrarListaCliente(nodoLista* lista);
+void mostrarUnNodoConsumo(nodoLista* aMostar);
+void mostrarListaConsumo(nodoLista* lista);
 
 
 #endif // LISTA_H_INCLUDED
