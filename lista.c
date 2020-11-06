@@ -1,6 +1,6 @@
 #include "lista.h"
 #include <stdio.h>
-// prueba merge
+
 /*********************************************************//**
 /*
 /* \brief  Inicializa el puntero al primer nodo de la lista con el valor NULL
