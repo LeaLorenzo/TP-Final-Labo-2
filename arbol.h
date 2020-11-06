@@ -12,4 +12,7 @@ typedef struct _nodoArbol
 }nodoArbol;
 
 
+nodoArbol* inicArbol();
+nodoArbol* crearNodoArbol(stCliente dato);
+
 #endif // ARBOL_H_INCLUDED
