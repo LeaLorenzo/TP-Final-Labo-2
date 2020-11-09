@@ -14,5 +14,13 @@ typedef struct _nodoArbol
 
 nodoArbol* inicArbol();
 nodoArbol* crearNodoArbol(stCliente dato);
+nodoArbol* insertarNodoArbol(nodoArbol* arbol, nodoArbol* nuevo);
+void mostrarNodoArbol(nodoArbol* nodo);
+void preOrder(nodoArbol* arbol);
+void inOrder(nodoArbol* arbol);
+void postOrder(nodoArbol* arbol);
+nodoArbol* buscarNMI(nodoArbol* arbol);
+nodoArbol* buscarNMD(nodoArbol* arbol);
+nodoArbol* borrarNodoArbol(nodoArbol* arbol, int dato);
 
 #endif // ARBOL_H_INCLUDED
