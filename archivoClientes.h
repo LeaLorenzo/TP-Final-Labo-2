@@ -31,5 +31,23 @@ int modificarDatoCliente();
 stCliente subMenu(stCliente cliente);
 void consultarCliente(int id);
 int generarRandomCliente();
+///////////////////////////////////////////
+///////////////////////////////////////////
+///////////////////////////////////////////
+void agregarRegistro(stCliente c);
+void getNombre(char n[]);
+void getApellido(char a[]);
+void getDNI(int dni);
+void getEmail(char email[], char nombre[], char apellido[]);
+void getDomicilio(char c[]);
+void getTelefono(char tel[]);
+void getNumeroDeCliente(int nroCliente);
+int getTipo();
+stCliente cargoRegistroArchivoRandom();
+void guardaRegistroArchivo(char archivo[], stCliente c);
+void generaArchivoRandom(int cantidad);
+int cuentaRegistros(char archivo[], stCliente c[]);
+void espera();
+int buscaDNI(int dni);
 
 #endif // ARCHIVOCLIENTES_H_INCLUDED

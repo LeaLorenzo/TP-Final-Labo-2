@@ -3,6 +3,7 @@
 #include "archivoClientes.h"
 #include "lista.h"
 
+
 typedef struct _nodoArbol
 {
     stCliente dato;
@@ -10,6 +11,7 @@ typedef struct _nodoArbol
     struct nodoArbol* izq;
     struct nodoArbol* der;
 }nodoArbol;
+
 
 
 nodoArbol* inicArbol();
