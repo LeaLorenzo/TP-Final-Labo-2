@@ -44,7 +44,7 @@ nodoArbol* insertarNodoArbol(nodoArbol* arbol, nodoArbol* nuevo)
     }
     else
     {
-        if(nuevo->dato.dni > arbol->dato.dni)
+        if(nuevo->dato.nroCliente > arbol->dato.nroCliente)
         {
             arbol->der = insertarNodoArbol(arbol->der, nuevo);
         }
@@ -67,6 +67,7 @@ void mostrarNodoArbol(nodoArbol* nodo)
 {
     printf(" %d -", nodo->dato);
 }
+
 
 /*********************************************************//**
 /*
@@ -129,9 +130,9 @@ void postOrder(nodoArbol* arbol)
 nodoArbol* buscarNMI(nodoArbol* arbol)
 {
     nodoArbol* aux = arbol;
-    while((aux) && (aux->izq!=NULL))
+    while((aux != NULL) && (aux->izq!=NULL))
     {
-        aux = aux->izq;
+        aux = buscarNMI(aux->izq);
     }
     return aux;
 }
@@ -148,7 +149,7 @@ nodoArbol* buscarNMD(nodoArbol* arbol)
     nodoArbol* aux = arbol;
     while((aux) && (aux->der!=NULL))
     {
-        aux = aux->der;
+        aux = buscarNMD(aux->der);
     }
     return aux;
 }
