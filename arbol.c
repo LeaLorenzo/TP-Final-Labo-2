@@ -22,6 +22,7 @@ nodoArbol* inicArbol()
 nodoArbol* crearNodoArbol(stCliente dato)
 {
     nodoArbol* nuevo = (nodoArbol*) malloc(sizeof(nodoArbol));
+    nuevo->consumos = inicLista();
     nuevo->dato = dato;
     nuevo->izq = NULL;
     nuevo->der = NULL;
