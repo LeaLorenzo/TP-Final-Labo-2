@@ -104,11 +104,11 @@
 	<stdio.h>
 	<malloc.h>
 
-1605541774 source:c:\users\llorenzo\desktop\git tp final\arbol.c
+1605572623 source:c:\users\llorenzo\desktop\git tp final\arbol.c
 	"arbol.h"
 	<stdio.h>
 
-1605391419 c:\users\llorenzo\desktop\git tp final\arbol.h
+1605568366 c:\users\llorenzo\desktop\git tp final\arbol.h
 	"archivoClientes.h"
 	"lista.h"
 
@@ -130,7 +130,7 @@
 	"archivoConsumos.h"
 	<stdio.h>
 
-1605541774 source:c:\users\llorenzo\desktop\git tp final\main.c
+1605572738 source:c:\users\llorenzo\desktop\git tp final\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -143,7 +143,7 @@
 	"utilidades.h"
 	"arbol.h"
 
-1605383425 source:c:\users\llorenzo\desktop\git tp final\lista.c
+1605565127 source:c:\users\llorenzo\desktop\git tp final\lista.c
 	"lista.h"
 	<stdio.h>
 
