@@ -60,20 +60,22 @@ nodoArbol* insertarNodoArbol(nodoArbol* arbol, nodoArbol* nuevo)
 /*********************************************************//**
 /*
 /* \brief  Muestra el nodoArbol.
-/* \param  Una variable puntero al comienzo de la lista.
+/* \param  Una variable del tipo nodoArbol.
 /* \return No retorna nada, es de tipo void.
 /*
 /************************************************************/
 void mostrarNodoArbol(nodoArbol* nodo)
 {
-    printf(" %d -", nodo->dato);
+    mostrarUnCliente(nodo->dato);
+    mostrarListaConsumo(nodo->consumos);
+    printf("\n");
 }
 
 
 /*********************************************************//**
 /*
 /* \brief  Visita la raíz, atraviesa el sub arbol izq, luego atraviesa el sub arbol der.
-/* \param  Una variable puntero al comienzo de la lista.
+/* \param  Una variable del tipo nodoArbol.
 /* \return No retorna nada, es de tipo void.
 /*
 /************************************************************/
@@ -90,7 +92,7 @@ void preOrder(nodoArbol* arbol)
 /*********************************************************//**
 /*
 /* \brief  Atraviesa el sub arbol izq, visita la raíz, luego atraviesa el sub arbol der.
-/* \param  Una variable puntero al comienzo de la lista.
+/* \param  Una variable del tipo nodoArbol.
 /* \return No retorna nada, es de tipo void.
 /*
 /************************************************************/
@@ -107,7 +109,7 @@ void inOrder(nodoArbol* arbol)
 /*********************************************************//**
 /*
 /* \brief  Atraviesa el sub arbol izq, atraviesa el sub arbol der, luego visita la raíz.
-/* \param  Una variable puntero al comienzo de la lista.
+/* \param  Una variable del tipo nodoArbol.
 /* \return No retorna nada, es de tipo void.
 /*
 /************************************************************/
@@ -155,51 +157,109 @@ nodoArbol* buscarNMD(nodoArbol* arbol)
     return aux;
 }
 
-
+/*********************************************************//**
+/*
+/* \brief  Busca el nodoArbol es hoja.
+/* \param  Una variable del tipo nodoArbol
+/* \return Retorna la respuesta si es hoja.
+/*
+/************************************************************/
+int esHoja(nodoArbol * arbol)
+{
+    int rta = 0;
+    if(arbol)
+    {
+        if((arbol->izq == NULL) && (arbol->der == NULL))
+        {
+            rta = 1;
+        }
+    }
+    return rta;
+}
 /*********************************************************//**
 /*
 /* \brief    Borra un nodo de un árbol binario.
-/* \param    El arbol nodoArbol* puntero a arbol.
-/* \param    El dato a borrar.
+/* \param    Una variable del tipo nodoArbol.
+/* \param    Una variable del tipo int, en este caso el idCliente a borrar.
 /* \return   Retorna el nodoArbol con el dato buscado.
 /*
 /*********************************************************/
-nodoArbol* borrarNodoArbol(nodoArbol* arbol, int dato) // por dni
+nodoArbol* borrarNodoArbol(nodoArbol* arbol, int idCliente) // por idCliente
 {
     if(arbol != NULL)
     {
-        if(dato == arbol->dato.dni)
+        if(idCliente == arbol->dato.id)
         {
             if(arbol->izq != NULL)
             {
                 nodoArbol* masDer = buscarNMD(arbol->izq);
                 arbol->dato = masDer->dato;
-                arbol->izq = borrarNodoArbol(arbol->izq, masDer->dato.dni);
+                arbol->izq = borrarNodoArbol(arbol->izq, masDer->dato.id);
+            }
+            else if(arbol->der!=NULL)
+            {
+                nodoArbol* masIzq = buscarNMI(arbol->der);
+                arbol->dato = masIzq->dato;
+                arbol->der = borrarNodoArbol(arbol->der, masIzq->dato.id);
             }
             else
             {
-                if(arbol->der != NULL)
-                {
-                    nodoArbol* masIzq = buscarNMI(arbol->der);
-                    arbol->dato = masIzq->dato;
-                    arbol->der = borrarNodoArbol(arbol->der, masIzq->dato.dni);
-                }
-                else
+                if(esHoja(arbol) == 1)
                 {
                     free(arbol);
                     arbol = NULL;
                 }
             }
 
+
         }
-        if(dato > arbol->dato.dni)
+        else if(idCliente > arbol->dato.id)
         {
-            arbol->der = borrarNodoArbol(arbol->der, dato);
+            arbol->der = borrarNodo(arbol->der, idCliente);
         }
-        if(dato < arbol->dato.dni)
+        else if(idCliente < arbol->dato.id)
         {
-            arbol->izq = borrarNodoArbol(arbol->izq, dato);
+            arbol->izq = borrarNodo(arbol->izq, idCliente);
         }
     }
     return arbol;
 }
+/*
+nodoArbol* borrarNodo(nodoArbol* arbol, int dato)
+{
+    if(arbol != NULL)
+    {
+        if(arbol->dato == dato)
+        {
+            if(arbol->izq != NULL)
+            {
+                nodoArbol*  masDer = nodoMasDer(arbol->izq); //busco es mas derecho del lado izq
+                arbol->dato = masDer->dato;
+                arbol->izq = borrarNodo(arbol->izq, masDer->dato);
+            }
+            else if(arbol->der!=NULL)
+            {
+                nodoArbol* masIzq = nodoMasIzq(arbol->der);
+                arbol->dato = masIzq->dato;
+                arbol->der = borrarNodo(arbol->der, masIzq->der);
+            }
+            else
+            {
+                if(esHoja(arbol) == 1)
+                {
+                    free(arbol);
+                    arbol = NULL;
+                }
+            }
+        }
+        else if(dato > arbol->dato)
+        {
+            arbol->der = borrarNodo(arbol->der, dato);
+        }
+        else if(dato < arbol->dato)
+        {
+            arbol->izq = borrarNodo(arbol->izq, dato);
+        }
+    }
+    return arbol;
+}*/
