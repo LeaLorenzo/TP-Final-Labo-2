@@ -8,6 +8,7 @@
 #include "archivoConsumos.h"
 #include "lista.h"
 #include "utilidades.h"
+#include "arbol.h"
 
 
 
@@ -50,7 +51,14 @@ void cargarMilConsumos(stConsumos c[]);
 int generarRandomConsumo();
 void pasarConsumoArchivo(stConsumos c[]);
 int buscarConsumo (int mes, int idCliente);
-
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+int menuABB();
+nodoArbol* agregarCliente(nodoArbol* ADL, stCliente dato);
+nodoArbol* buscarCliente(nodoArbol* ADL, char apellido[]);
+nodoArbol* altaCliente(nodoArbol* ADL, nodoLista* nuevoConsumo, char apellido[]);
+//nodoArbol* archivo2ADL(char archivo[], nodoArbol* ADL, nodoLista* nuevoConsumo);
+nodoArbol* archiCliente2arbol(nodoArbol* arbol);
 
 
 int main()
@@ -60,6 +68,7 @@ int main()
     stConsumos consumosAleatorios[1000];
     cargarMilConsumos(consumosAleatorios);
     pasarConsumoArchivo(consumosAleatorios);
+    nodoArbol* ADL = inicArbol();
 
     int selected;
     int seleccion;
@@ -70,6 +79,7 @@ int main()
         printf("\n      Que Menu desea trabajar: \n");
         printf("\n       |1| -> Clientes\n");
         printf("\n       |2| -> Consumos\n");
+        printf("\n       |3| -> ABB\n");
         printf("\n       |0| -> Salir\n");
         scanf("%d", &eleccion); /// AGREGAMOS UN DATO A "ELECCION" ///
 
@@ -145,6 +155,39 @@ int main()
             }
             while(seleccion!=0);
         }
+        else if(eleccion == 3)
+        {
+            do
+            {
+                seleccion = menuABB();
+                switch(seleccion)
+                {
+                case 1:
+                    funcion11();
+                    break;
+                case 2:
+                    funcion12();
+                    break;
+                case 3:
+                    funcion13();
+                    break;
+                case 4:
+                    funcion14();
+                    break;
+                case 5:
+                    funcion15();
+                    break;
+                case 6:
+                    funcion16();
+                    break;
+                default:
+                    printf("\nOpcion invalida\n");
+                    break;
+
+                }
+            }
+            while(seleccion!=0);
+        }
     }
     while(eleccion != 0);
     printf("\nGracias por elegir nuestros servicios\n");
@@ -168,6 +211,7 @@ int menuClientes()
     printf("\n      3-Baja Clientes");
     printf("\n      4-Modificar Clientes");
     printf("\n      5-Consulta Clientes");
+    printf("\n      6-Genera Clientes Random");
     printf("\n      0-Para volver al MENU PRINCIPAL\n");
     printf("\n      Ingrese el numero que desea realizar: ");
     scanf("%d",&input);
@@ -193,6 +237,26 @@ int menuConsumos()
     return input;
 }
 
+int menuABB()
+{
+    int input;
+    system("cls");
+    printf("\n      LABORATORIO 2");
+    printf("\n      -------------------------------");
+    printf("\n      MENU ARBOL DE BUSQUEDA BINARIO");
+    printf("\n      -------------------------------");
+    printf("\n      1-Pasar del archivo al ADL");
+    printf("\n      2-Mostrar el ADL");
+    printf("\n      3-3RA FUNCION");
+    printf("\n      4-4TA FUNCION");
+    printf("\n      5-5TA FUNCION");
+    printf("\n      6-6TA FUNCION\n");
+    printf("\n      0-Para volver al MENU PRINCIPAL\n");
+    printf("\n      Ingrese el numero que desea realizar: ");
+    scanf("%d",&input);
+    return input;
+    system("pause");
+}
 
 void funcion1()
 {
@@ -334,4 +398,228 @@ void funcion10 ()
 
 /////////////////////////////////////////////////////
 /////////////////////////////////////////////////////
+
+void funcion11 (nodoArbol* ADL)
+{
+    system("cls");
+    printf("HELLO GUORD\n");
+    ADL = archiCliente2arbol(ADL);
+    system("pause");
+}
+void funcion12 (nodoArbol* ADL)
+{
+    system("cls");
+    printf("Recorrer y Mostar InOrder\n");
+    inOrder(ADL);
+    system("pause");
+}
+void funcion13 ()
+{
+
+}
+void funcion14 ()
+{
+
+}
+void funcion15 ()
+{
+
+}
+void funcion16 ()
+{
+
+}
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/*********************************************************//**
+*
+* \brief Agrega un Cliente al Arbol de Listas
+* \param El ADL.
+* \param stCliente dato - un cliente
+* \return Retorna ADL
+*
+***********************************************************/
+nodoArbol* agregarCliente(nodoArbol* ADL, stCliente dato)
+{
+
+    strcpy(ADL->dato.nombre, dato.nombre);
+    strcpy(ADL->dato.apellido, dato.apellido);
+    strcpy(ADL->dato.domicilio, dato.domicilio);
+    strcpy(ADL->dato.email, dato.email);
+    strcpy(ADL->dato.movil, dato.movil);
+    ADL->dato.dni = dato.dni;
+    ADL->dato.baja = dato.baja;
+    ADL->dato.id = dato.id;
+    ADL->dato.nroCliente = dato.nroCliente;
+
+    ADL->consumos = inicLista();
+
+    return ADL;
+}
+
+
+/*********************************************************//**
+*
+* \brief Busca un cliente en el ADL
+* \param El ADL.
+* \param El apellido del Cliente a buscar
+* \return Retorna el cliente buscado y si no lo encuentra, retorna NULL
+*
+***********************************************************/
+nodoArbol* buscarCliente(nodoArbol* ADL, char apellido[])
+{
+    nodoArbol* buscado = NULL;
+
+    if (ADL != NULL)
+    {
+        if (strcmpi(ADL->dato.apellido, apellido) == 0)
+        {
+            buscado = ADL;
+        }
+        else
+        {
+            buscado = buscarCliente(ADL->izq, apellido);
+            if (buscado == NULL)
+            {
+                buscado = buscarCliente(ADL->der, apellido);
+            }
+        }
+    }
+
+    return buscado;
+}
+
+/*********************************************************//**
+*
+* \brief Le da el alta a un Cliente en el ADL
+* \param El ADL.
+* \param Un Consumo para agregar al ADL
+* \param El apellido del cliente
+* \return Retorna ADL
+*
+***********************************************************/
+nodoArbol* altaCliente(nodoArbol* ADL, nodoLista* nuevoConsumo, char apellido[])
+{
+    nodoArbol* clienteEncontrado = buscarCliente(ADL, apellido);
+
+    if(clienteEncontrado == NULL)
+    {
+        stCliente c = cargaUnCliente();
+        nodoArbol* nuevo = crearNodoArbol(c);
+        nuevo = agregarCliente(ADL, c);
+        ADL = insertarNodoArbol(ADL, nuevo);
+        ADL->consumos = agregarFinal(ADL->consumos, nuevoConsumo);
+    }
+    else
+    {
+        clienteEncontrado->consumos = agregarFinal(clienteEncontrado->consumos, nuevoConsumo);
+    }
+
+    return ADL;
+}
+
+
+/*********************************************************//**
+*
+* \brief Pasa los datos del archivo al ADL
+* \param El archivo de datos.
+* \param El ADL.
+* \param Nuevo Consumo.
+* \return Retorna el ADL.
+*
+***********************************************************/
+/*nodoArbol* archivo2ADL(char archivo[], nodoArbol* ADL, nodoLista* nuevoConsumo)
+{
+    stCliente c;
+    stConsumos d;
+    char apellido[30];
+
+    FILE* arch = fopen(archivo, "rb");
+
+    if(arch)
+    {
+        while((ADL!=NULL) && (fread(&c, sizeof(stCliente), 1, arch) > 0))
+        {
+
+            strcpy(apellido, c.apellido);
+            ADL = altaCliente(ADL, nuevoConsumo, apellido);
+
+        }
+        fclose(arch);
+    }
+
+
+    return ADL;
+}*/
+/*********************************************************//**
+*
+* \brief Pasa los datos del archivo al arbol
+* \param El ADL.
+* \return Retorna el arbol.
+*
+***********************************************************/
+nodoArbol* archiCliente2arbol(nodoArbol* arbol)
+{
+    FILE* archi = fopen(arCliente, "rb");
+    stCliente c;
+    if(archi)
+    {
+        while(fread(&c, sizeof(stCliente),1,archi)>0)
+        {
+            arbol = insertarNodoArbol(arbol, crearNodoArbol(c));
+        }
+        fclose(archi);
+    }
+    return arbol;
+}
+///recorrer el arbol
+/// abrir archivo consumos
+///  leer consumo
+///   buscar ese consumo en el arbol (por idCliente que tiene el consumo)
+///    insertas en el arbol (insertas el consumo mediant
+/// abrir archivo consumos
+///  leer consumo
+///   buscar ese consumo en el arbol (por idCliente que tiene el consumo)
+///    insertas en el arbol (insertas el consumo mediante funcion de lista)
+/*nodoArbol* archiConsumos2arbolCliente(nodoArbol* arbol, stCliente cliente)
+{
+    FILE* archi = fopen(arConsumos, "rb");
+    stConsumos c;
+    if(archi)
+    {
+        while(fread(&c, sizeof(stConsumos), 1, archi)>0)
+        {
+            if(c.idCliente == cliente.id)
+            {
+                arbol = insertarNodoArbol(arbol, crearNodo(c));
+            }
+            else if
+            {
+
+            }
+        }
+        fclose(archi);
+    }
+    return arbol;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
