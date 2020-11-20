@@ -104,7 +104,7 @@
 	<stdio.h>
 	<malloc.h>
 
-1605609822 source:c:\users\llorenzo\desktop\git tp final\arbol.c
+1605832124 source:c:\users\llorenzo\desktop\git tp final\arbol.c
 	"arbol.h"
 	<stdio.h>
 
@@ -130,7 +130,7 @@
 	"archivoConsumos.h"
 	<stdio.h>
 
-1605831890 source:c:\users\llorenzo\desktop\git tp final\main.c
+1605832380 source:c:\users\llorenzo\desktop\git tp final\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -154,8 +154,8 @@
 	"archivoConsumos.h"
 	"archivoClientes.h"
 
-1605823572 source:c:\users\llorenzo\desktop\git tp final\registro.c
+1605832380 source:c:\users\llorenzo\desktop\git tp final\registro.c
 	"registro.h"
 
-1605825613 c:\users\llorenzo\desktop\git tp final\registro.h
+1605832380 c:\users\llorenzo\desktop\git tp final\registro.h
 

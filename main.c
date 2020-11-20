@@ -664,11 +664,11 @@ nodoArbol* insertarConsumo(nodoArbol* arbol, nodoLista* nuevo)
     {
         if(nuevo->datoConsumo.idCliente > arbol->dato.id)
         {
-            arbol->der = insertarConsumo(arbol->der, nuevo);
+            arbol->der = insertarConsumo(arbol->der, agregarFinal(arbol, nuevo));
         }
         else
         {
-            arbol->izq =insertarConsumo(arbol->izq, nuevo);
+            arbol->izq =insertarConsumo(arbol->izq, agregarFinal(arbol, nuevo));
         }
     }
     return arbol;
