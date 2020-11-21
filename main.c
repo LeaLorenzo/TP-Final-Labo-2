@@ -71,9 +71,9 @@ int main()
 {
     system("color B0");
     srand (time(NULL));
-    stConsumos consumosAleatorios[1000];
-    //cargarMilConsumos(consumosAleatorios);
-    pasarConsumoArchivo(consumosAleatorios);
+    //stConsumos consumosAleatorios[1000]; // NO UTILIZAR EN TP LABO2
+    //cargarMilConsumos(consumosAleatorios); // NO UTILIZAR EN TP LABO2
+    //pasarConsumoArchivo(consumosAleatorios); // NO UTILIZAR EN TP LABO2
     nodoArbol* ADL = inicArbol();
 
     int selected;
@@ -169,13 +169,13 @@ int main()
                 switch(seleccion)
                 {
                 case 1:
-                    funcion11(ADL);// pasa del archivo de clientes al ADL
+                    funcion11(ADL);// pasa del archivo de clientes y consumos al ADL
                     break;
                 case 2:
-                    funcion12(ADL);// pasa del archivo de consumos al ADL
+                    funcion12();// mostrar
                     break;
                 case 3:
-                    funcion13(); // mostrar
+                    funcion13(); // pasa del archivo de consumos al ADL
                     break;
                 case 4:
                     funcion14(); // borrar un cliente por id
@@ -251,12 +251,12 @@ int menuADL()
     printf("\n      -------------------------------");
     printf("\n      MENU ARBOL DE LISTAS");
     printf("\n      -------------------------------");
-    printf("\n      1-Pasar del archivo Clientes al ADL");
-    printf("\n      2-Pasar del archivo Consumos a ADL");
-    printf("\n      3-Mostrar el ADL");
+    printf("\n      1-Pasar del archivo Clientes y de Consumos al ADL");// pasa del archivo de clientes y consumos al ADL
+    printf("\n      2-Mostrar el ADL");
+    printf("\n      3-Funcion disponible..");
     printf("\n      4-Borrar un Cliente por id");
-    printf("\n      5-Pasar de los dos archivos al ADL");
-    printf("\n      6-Recorrer y mostrar todo el ADL provi\n");
+    printf("\n      5-Funcion disponible..");
+    printf("\n      6-Funcion disponible..\n");
     printf("\n      0-Para volver al MENU PRINCIPAL\n");
     printf("\n      Ingrese el numero que desea realizar: ");
     scanf("%d",&input);
@@ -404,23 +404,15 @@ void funcion10 ()
 
 /////////////////////////////////////////////////////
 /////////////////////////////////////////////////////
-
-void funcion11 (nodoArbol* arbol)
+void funcion11 (nodoArbol* ADL)
 {
     system("cls");
-    printf("Por favor, espere un momento que estamos transfiriendo los datos del archivo al arbol de clientes...\n");
-
-    arbol = archiCliente2arbol(arbol);
+    printf("Por favor, espere un momento, estamos pasando los consumos y clientes de los archivos al ADL: \n");
+    ADL = archiToADL(ADL);
     system("pause");
+
 }
 void funcion12 (nodoArbol* ADL)
-{
-    system("cls");
-    printf("Por favor, espere un momento, estamos pasando los consumos del archivo al ADL: \n");
-    ADL = archiConsumos2ADL(ADL);
-    system("pause");
-}
-void funcion13 (nodoArbol* ADL)
 {
     system("cls");
     printf("Arbol de Clientes inOrder: \n");
@@ -429,6 +421,15 @@ void funcion13 (nodoArbol* ADL)
     //postOrder(ADL);
     system("pause");
 }
+void funcion13 (nodoArbol* ADL) // Tal vez usemos otra funcion //
+{
+    system("cls");
+    printf("\n Espacio Disponible...\n");
+    /*printf("Por favor, espere un momento, estamos pasando los consumos del archivo al ADL: \n");
+    ADL = archiConsumos2ADL(ADL);*/
+    system("pause");
+}
+
 void funcion14 (nodoArbol* ADL)
 {
     system("cls");
@@ -439,16 +440,19 @@ void funcion14 (nodoArbol* ADL)
     ADL = borrarNodoArbol(ADL, idCliente);
     system("pause");
 }
-void funcion15 (nodoArbol* ADL)
+void funcion15 (nodoArbol* arbol) // Tal vez usemos otra funcion //
 {
-    ADL = archiToADL(ADL);
-     system("pause");
+    system("cls");
+    printf("\n Espacio Disponible...\n");
+    /*printf("Por favor, espere un momento que estamos transfiriendo los datos del archivo al arbol de clientes...\n");
 
+    arbol = archiCliente2arbol(arbol);*/
+    system("pause");
 }
 void funcion16 (nodoArbol* ADL)
 {
-    printf("\n Muestra del ADL completo provi..");
-    recorrerYmostrarADL(ADL);
+    printf("\n Espacio Disponible...\n");
+
      system("pause");
 }
 
@@ -536,12 +540,12 @@ nodoArbol* alta(nodoArbol *adl, stCliente datoCliente, stConsumos datoConsumos)
         printf("\n2do hola");
         nodoArbol *nuevo = crearNodoArbol(datoCliente);
         adl = insertarNodoArbol(adl, nuevo);
-        adl->consumos = agregarPpio(adl->consumos, nuevaLista);
+        adl->consumos = agregarFinal(adl->consumos, nuevaLista);
     }
     else
     {
         printf("\n3er hola");
-        busqueda->consumos = agregarPpio(busqueda->consumos, nuevaLista);
+        busqueda->consumos = agregarFinal(busqueda->consumos, nuevaLista);
     }
 
     return adl;
@@ -668,7 +672,7 @@ nodoArbol* insertarConsumo(nodoArbol* arbol, nodoLista* nuevo)
         }
         else
         {
-            arbol->izq =insertarConsumo(arbol->izq, agregarFinal(arbol, nuevo));
+            arbol->izq = insertarConsumo(arbol->izq, agregarFinal(arbol, nuevo));
         }
     }
     return arbol;
