@@ -169,13 +169,13 @@ void mostrarUnConsumo(stConsumos c)
 {
     if(c.baja == 0)
     {
-        printf("\nId ........................: %d \n",c.id);
+        printf("_________________________________________________");
         printf("\nId cliente.................: %d \n",c.idCliente);
         printf("\nAnio.......................: %d \n",c.anio);
         printf("\nMes........................: %d \n",c.mes);
         printf("\nDia........................: %d \n",c.dia);
         printf("\nConsumo....................: %d MB\n",c.datosConsumidos);
-        printf("______________");
+        printf("_________________________________________________");
     }
 }
 
