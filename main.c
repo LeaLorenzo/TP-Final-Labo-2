@@ -534,17 +534,17 @@ nodoArbol* alta(nodoArbol *adl, stCliente datoCliente, stConsumos datoConsumos)
     nodoLista *nuevaLista = crearNodo(datoConsumos);
     nodoArbol *busqueda = buscarCliente(adl, datoCliente.id);
 
-    printf("\n1er hola");
+    printf("\n1er hola %d", datoConsumos.idCliente);
+    if(busqueda)
+        mostrarNodoArbol(busqueda);
     if (busqueda == NULL)
     {
-        printf("\n2do hola");
         nodoArbol *nuevo = crearNodoArbol(datoCliente);
+        nuevo->consumos = agregarFinal(nuevo->consumos, nuevaLista);
         adl = insertarNodoArbol(adl, nuevo);
-        adl->consumos = agregarFinal(adl->consumos, nuevaLista);
     }
     else
     {
-        printf("\n3er hola");
         busqueda->consumos = agregarFinal(busqueda->consumos, nuevaLista);
     }
 
@@ -700,21 +700,20 @@ nodoArbol* insertarConsumo(nodoArbol* arbol, nodoLista* nuevo)
 
 nodoArbol *archiToADL (nodoArbol *adl)
 {
-    FILE *archiCli = fopen(arCliente, "rb");
     FILE *archiCon = fopen(arConsumos, "rb");
 
     stCliente cli;
     stConsumos con;
 
-    if ((archiCli != NULL) && (archiCon != NULL))
+    if (archiCon != NULL)
     {
-        while ((fread(&cli, sizeof(stCliente), 1, archiCli) > 0) && (fread(&con, sizeof(stConsumos), 1, archiCon) > 0))
+        while (fread(&con, sizeof(stConsumos), 1, archiCon) > 0)
         {
             printf("\n a ver si lee...");
+            cli = buscaClienteEnArchivo(con.idCliente);
             adl = alta(adl, cli, con);
         }
 
-        fclose(archiCli);
         fclose(archiCon);
     }
 
