@@ -31,6 +31,7 @@ int modificarDatoCliente();
 stCliente subMenu(stCliente cliente);
 void consultarCliente(int id);
 int generarRandomCliente();
+stCliente buscaClienteEnArchivo(int id);
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 ///////////////////////////////////////////

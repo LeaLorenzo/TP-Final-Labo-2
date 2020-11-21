@@ -45,7 +45,7 @@ nodoArbol* insertarNodoArbol(nodoArbol* arbol, nodoArbol* nuevo)
     }
     else
     {
-        if(nuevo->dato.nroCliente > arbol->dato.nroCliente)
+        if(nuevo->dato.id > arbol->dato.id)
         {
             arbol->der = insertarNodoArbol(arbol->der, nuevo);
         }

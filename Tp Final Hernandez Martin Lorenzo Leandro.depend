@@ -92,33 +92,33 @@
 	"archivoConsumos.h"
 	<stdio.h>
 
-1604690701 source:c:\users\llorenzo\desktop\git tp final\gotoxy.c
+1605927022 source:c:\users\llorenzo\desktop\git tp final\gotoxy.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 
-1604690701 source:c:\users\llorenzo\desktop\git tp final\pila.c
+1605927022 source:c:\users\llorenzo\desktop\git tp final\pila.c
 	"pila.h"
 
-1604690701 c:\users\llorenzo\desktop\git tp final\pila.h
+1605927022 c:\users\llorenzo\desktop\git tp final\pila.h
 	<stdio.h>
 	<malloc.h>
 
-1605832124 source:c:\users\llorenzo\desktop\git tp final\arbol.c
+1605977794 source:c:\users\llorenzo\desktop\git tp final\arbol.c
 	"arbol.h"
 	<stdio.h>
 
-1605573138 c:\users\llorenzo\desktop\git tp final\arbol.h
+1605927022 c:\users\llorenzo\desktop\git tp final\arbol.h
 	"archivoClientes.h"
 	"lista.h"
 
-1605391419 c:\users\llorenzo\desktop\git tp final\archivoclientes.h
+1605977388 c:\users\llorenzo\desktop\git tp final\archivoclientes.h
 	"archivoConsumos.h"
 
-1604691565 c:\users\llorenzo\desktop\git tp final\archivoconsumos.h
+1605927022 c:\users\llorenzo\desktop\git tp final\archivoconsumos.h
 	"archivoClientes.h"
 
-1605825675 c:\users\llorenzo\desktop\git tp final\lista.h
+1605927022 c:\users\llorenzo\desktop\git tp final\lista.h
 	"archivoConsumos.h"
 	"archivoClientes.h"
 
@@ -126,11 +126,11 @@
 	"archivoClientes.h"
 	<stdio.h>
 
-1605910613 source:c:\users\llorenzo\desktop\git tp final\archivoconsumos.c
+1605927022 source:c:\users\llorenzo\desktop\git tp final\archivoconsumos.c
 	"archivoConsumos.h"
 	<stdio.h>
 
-1605926581 source:c:\users\llorenzo\desktop\git tp final\main.c
+1605985154 source:c:\users\llorenzo\desktop\git tp final\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -143,19 +143,153 @@
 	"utilidades.h"
 	"arbol.h"
 
-1605573138 source:c:\users\llorenzo\desktop\git tp final\lista.c
+1605927022 source:c:\users\llorenzo\desktop\git tp final\lista.c
 	"lista.h"
 	<stdio.h>
 
-1605391419 source:c:\users\llorenzo\desktop\git tp final\utilidades.c
+1605927022 source:c:\users\llorenzo\desktop\git tp final\utilidades.c
 	"utilidades.h"
 
-1605391419 c:\users\llorenzo\desktop\git tp final\utilidades.h
+1605927022 c:\users\llorenzo\desktop\git tp final\utilidades.h
 	"archivoConsumos.h"
 	"archivoClientes.h"
 
-1605832380 source:c:\users\llorenzo\desktop\git tp final\registro.c
+1605927022 source:c:\users\llorenzo\desktop\git tp final\registro.c
 	"registro.h"
 
-1605832380 c:\users\llorenzo\desktop\git tp final\registro.h
+1605927022 c:\users\llorenzo\desktop\git tp final\registro.h
+
+1605977795 source:d:\techmdq\downloads\tp-final-labo-2-leabranch\arbol.c
+	"arbol.h"
+	<stdio.h>
+
+1605927022 d:\techmdq\downloads\tp-final-labo-2-leabranch\arbol.h
+	"archivoClientes.h"
+	"lista.h"
+
+1605977388 d:\techmdq\downloads\tp-final-labo-2-leabranch\archivoclientes.h
+	"archivoConsumos.h"
+
+1605927022 d:\techmdq\downloads\tp-final-labo-2-leabranch\archivoconsumos.h
+	"archivoClientes.h"
+
+1605927022 d:\techmdq\downloads\tp-final-labo-2-leabranch\lista.h
+	"archivoConsumos.h"
+	"archivoClientes.h"
+
+1605927022 source:d:\techmdq\downloads\tp-final-labo-2-leabranch\archivoconsumos.c
+	"archivoConsumos.h"
+	<stdio.h>
+
+1605927022 source:d:\techmdq\downloads\tp-final-labo-2-leabranch\gotoxy.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1605927022 source:d:\techmdq\downloads\tp-final-labo-2-leabranch\lista.c
+	"lista.h"
+	<stdio.h>
+
+1605927022 source:d:\techmdq\downloads\tp-final-labo-2-leabranch\pila.c
+	"pila.h"
+
+1605927022 d:\techmdq\downloads\tp-final-labo-2-leabranch\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1605927022 source:d:\techmdq\downloads\tp-final-labo-2-leabranch\registro.c
+	"registro.h"
+
+1605927022 d:\techmdq\downloads\tp-final-labo-2-leabranch\registro.h
+
+1605927022 source:d:\techmdq\downloads\tp-final-labo-2-leabranch\utilidades.c
+	"utilidades.h"
+
+1605927022 d:\techmdq\downloads\tp-final-labo-2-leabranch\utilidades.h
+	"archivoConsumos.h"
+	"archivoClientes.h"
+
+1605977388 source:d:\techmdq\downloads\tp-final-labo-2-leabranch\archivoclientes.c
+	"archivoClientes.h"
+	<stdio.h>
+
+1605977688 source:d:\techmdq\downloads\tp-final-labo-2-leabranch\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"pila.h"
+	<windows.h>
+	"archivoClientes.h"
+	"archivoConsumos.h"
+	"lista.h"
+	"utilidades.h"
+	"arbol.h"
+
+1605977794 source:c:\users\juan duhalde\desktop\tp-final-labo-2-leabranch\arbol.c
+	"arbol.h"
+	<stdio.h>
+
+1605927022 c:\users\juan duhalde\desktop\tp-final-labo-2-leabranch\arbol.h
+	"archivoClientes.h"
+	"lista.h"
+
+1605977388 c:\users\juan duhalde\desktop\tp-final-labo-2-leabranch\archivoclientes.h
+	"archivoConsumos.h"
+
+1605927022 c:\users\juan duhalde\desktop\tp-final-labo-2-leabranch\archivoconsumos.h
+	"archivoClientes.h"
+
+1605927022 c:\users\juan duhalde\desktop\tp-final-labo-2-leabranch\lista.h
+	"archivoConsumos.h"
+	"archivoClientes.h"
+
+1605977892 source:c:\users\juan duhalde\desktop\tp-final-labo-2-leabranch\archivoclientes.c
+	"archivoClientes.h"
+	<stdio.h>
+
+1605927022 source:c:\users\juan duhalde\desktop\tp-final-labo-2-leabranch\archivoconsumos.c
+	"archivoConsumos.h"
+	<stdio.h>
+
+1605927022 source:c:\users\juan duhalde\desktop\tp-final-labo-2-leabranch\gotoxy.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1605927022 source:c:\users\juan duhalde\desktop\tp-final-labo-2-leabranch\lista.c
+	"lista.h"
+	<stdio.h>
+
+1605927022 source:c:\users\juan duhalde\desktop\tp-final-labo-2-leabranch\pila.c
+	"pila.h"
+
+1605927022 c:\users\juan duhalde\desktop\tp-final-labo-2-leabranch\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1605927022 source:c:\users\juan duhalde\desktop\tp-final-labo-2-leabranch\registro.c
+	"registro.h"
+
+1605927022 c:\users\juan duhalde\desktop\tp-final-labo-2-leabranch\registro.h
+
+1605927022 source:c:\users\juan duhalde\desktop\tp-final-labo-2-leabranch\utilidades.c
+	"utilidades.h"
+
+1605927022 c:\users\juan duhalde\desktop\tp-final-labo-2-leabranch\utilidades.h
+	"archivoConsumos.h"
+	"archivoClientes.h"
+
+1605985152 source:c:\users\juan duhalde\desktop\tp-final-labo-2-leabranch\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"pila.h"
+	<windows.h>
+	"archivoClientes.h"
+	"archivoConsumos.h"
+	"lista.h"
+	"utilidades.h"
+	"arbol.h"
 
