@@ -534,7 +534,7 @@ nodoArbol* alta(nodoArbol *adl, stCliente datoCliente, stConsumos datoConsumos)
     nodoLista *nuevaLista = crearNodo(datoConsumos);
     nodoArbol *busqueda = buscarCliente(adl, datoCliente.id);
 
-    printf("\n1er hola %d", datoConsumos.idCliente);
+    printf("\n1er holis %d", datoConsumos.idCliente);
     if(busqueda)
         mostrarNodoArbol(busqueda);
     if (busqueda == NULL)
@@ -627,14 +627,12 @@ nodoArbol* archiConsumos2ADL(nodoArbol* arbol)
     {
         while(fread(&c, sizeof(stConsumos), 1, archi)>0 && (arbol))
         {
-            printf("hola antes del if...\n");
 
             if(buscarCliente(arbol, c.idCliente) == NULL)
             {
                 // crear cliente para agregar consumo
                 nodoLista* nuevo = crearNodo(c);
                 // hacer funcion para agregar consumo en el arbol
-                printf("hola despues del if...\n");
                 arbol = insertarConsumo(arbol, nuevo);
 
             }
@@ -709,7 +707,6 @@ nodoArbol *archiToADL (nodoArbol *adl)
     {
         while (fread(&con, sizeof(stConsumos), 1, archiCon) > 0)
         {
-            printf("\n a ver si lee...");
             cli = buscaClienteEnArchivo(con.idCliente);
             adl = alta(adl, cli, con);
         }
