@@ -54,7 +54,7 @@ void pasarConsumoArchivo(stConsumos c[]);
 int buscarConsumo (int mes, int idCliente);
 ///////////////////////////////////////////////
 ///////////////////////////////////////////////
-int menuABB();
+int menuADL();
 nodoArbol* agregarCliente(nodoArbol* ADL, stCliente dato);
 nodoArbol* buscarCliente(nodoArbol* ADL, int id);
 nodoArbol* altaCliente(nodoArbol* ADL, nodoLista* nuevoConsumo, char apellido[]);
@@ -65,6 +65,9 @@ nodoArbol* insertarConsumo(nodoArbol* arbol, nodoLista* nuevo);
 ///////////////////////////////////////////////////////////////////
 nodoArbol* alta(nodoArbol *adl, stCliente datoCliente, stConsumos datoConsumos);
 nodoArbol *archiToADL (nodoArbol *adl);
+int sumarConsumoPeriodo(nodoArbol* arbol, int mes, int anio);
+void muestraTicket(stConsumos c, int parcialDatos);
+void muestraTicketTotal(stConsumos c, int totalDatos);
 
 
 int main()
@@ -179,13 +182,13 @@ int main()
                     funcion13(); // Factuar Periodo Consumo del Cliente
                     break;
                 case 4:
-                    funcion14(); // borrar un cliente por id
+                    funcion14(); // Factuar totalidad del Cliente
                     break;
                 case 5:
-                    funcion15(ADL);
+                    funcion15(); // borrar un cliente por id
                     break;
                 case 6:
-                    funcion16(ADL);
+                    funcion16();
                     break;
                 default:
                     printf("\nOpcion invalida\n");
@@ -254,10 +257,10 @@ int menuADL()
     printf("\n      -------------------------------");
     printf("\n      1-Pasar del archivo Clientes y de Consumos al ADL");// pasa del archivo de clientes y consumos al ADL
     printf("\n      2-Mostrar el ADL");
-    printf("\n      3-Facturar Consumo por Cliente");
-    printf("\n      4-Borrar un Cliente por id");
-    printf("\n      5-Funcion disponible..");
-    printf("\n      6-Funcion disponible..\n");
+    printf("\n      3-Facturar parcialidad de Consumo por Cliente");
+    printf("\n      4-Facturar totalidad de Consumo del Cliente");
+    printf("\n      5-Consultar historico del Cliente");
+    printf("\n      6-Borrar un Cliente del arbol, en construccion\n");
     printf("\n      0-Para volver al MENU PRINCIPAL\n");
     printf("\n      Ingrese el numero que desea realizar: ");
     scanf("%d",&input);
@@ -422,74 +425,98 @@ void funcion12 (nodoArbol* ADL)
     //postOrder(ADL);
     system("pause");
 }
-void funcion13 (nodoArbol* ADL) // Tal vez usemos otra funcion //
+void funcion13 (nodoArbol* ADL) // Mostrar ticket parcial //
 {
     system("cls");
-    int id;
-    int mes; // del 1 al 12
-    int conMensual;
+    stConsumos c;
     nodoArbol* cliente;
-    nodoLista* totalDatos;
+
+    int parcialDatos = 0;
     printf("\n Ingrese el id de cliente que desea facturar: \n");
     fflush(stdin);
-    scanf("%d", &id);
+    scanf("%d", &c.id);
     printf("\n Ingrese el mes, del 1 al 12, que desea facturar: \n");
     fflush(stdin);
-    scanf("%d", &mes);
-    cliente = buscarCliente(ADL, id);
-    system("cls");
-    mostrarNodoArbol(cliente);
-    cliente->consumos = buscarNodoConsumo(mes,cliente->consumos);// no funciona bien, es una función nueva de listas
-    printf("\n %d MEGAS\n", cliente->consumos);
+    scanf("%d", &c.mes);
+    printf("\n Ingrese el anio que desea facturar: \n");
+    fflush(stdin);
+    scanf("%d", &c.anio);
     system("pause");
+    system("cls");
+
+    cliente = buscarCliente(ADL, c.id);
+
+    parcialDatos = sumarConsumoPeriodo(cliente, c.mes, c.anio );
+
+    printf("Resultado de la funcion sumarConsumoPeriodo: %d Megas\n\n", parcialDatos);
+    system("pause");
+    system("cls");
+
+    printf("Impresion de ticket parcial: \n");
+    muestraTicket(c, parcialDatos);
+    system("pause");
+    system("cls");
+
+}
+void funcion14 (nodoArbol* ADL) // Mostrar Ticket Total //
+{
+    system("cls");
+    stConsumos c;
+    nodoArbol* cliente;
+    int totalDatos = 0;
+
+    printf("\n Ingrese el id de cliente que desea facturar: \n");
+    fflush(stdin);
+    scanf("%d", &c.id);
+
+    system("pause");
+    system("cls");
+
+    cliente = buscarCliente(ADL, c.id);
 
     totalDatos = sumarConsumosLista(cliente->consumos);
-    system("cls");
-    puts("\n<<<<<<<<<<<<<Factura>>>>>>>>>>>>>>>>>>>");
-    printf("\n.....El id Cliente: %d\n", id);
-    printf("\n...............Mes: %d\n", mes);
-    printf("\n..Datos consumidos: %d\n\n", totalDatos);
-    puts("<<<<<<<<<<<<<<<Movistar>>>>>>>>>>>>>>>>>\n");
 
-    /*while(cliente->consumos)
-    {
-        if(cliente->consumos = cliente->consumos->siguiente)
-
-            // no entra en esta condicion..
-        {
-            totalDatos = sumarConsumosLista(cliente->consumos);
-            printf("El cliente Numero %d consumio %d megas \n", id, totalDatos);
-        }
-        else
-        {
-            printf("El cliente no tuvo consumos en ese periodo...\n");
-        }
-    }*/
+    printf("Resultado de la funcion sumarConsumoLista: %d Megas\n\n", totalDatos);
 
     system("pause");
+    system("cls");
+
+    printf("Impresion de ticket total: \n");
+    muestraTicketTotal(c, totalDatos);
+    system("pause");
+
+
 }
-void funcion14 (nodoArbol* ADL)
+void funcion15 (nodoArbol* ADL) // Mostrar historico de Consumos del Cliente //
+{
+
+    system("cls");
+    stConsumos c;
+    nodoArbol* cliente;
+
+    printf("\n Ingrese el id de cliente que desea a visualizar historico: \n");
+    fflush(stdin);
+    scanf("%d", &c.id);
+
+    system("pause");
+    system("cls");
+
+    printf("Cliente encontrado: \n");
+    cliente = buscarCliente(ADL, c.id);
+    mostrarNodoArbol(cliente);
+    system("pause");
+    system("cls");
+
+}
+void funcion16 (nodoArbol* ADL) // borrar cliente del arbol
 {
     system("cls");
     nodoArbol* borrar;
-    int idCliente;
+    stCliente c;
     printf("\n Por favor, ingrese el numero de cliente que desea borrar del arbol: ");
     fflush(stdin);
-    scanf("%d", &idCliente);
-    borrar = borrarNodoArbol(ADL, idCliente);
-    system("pause");
-}
-void funcion15 (nodoArbol* arbol) // Tal vez usemos otra funcion //
-{
-    system("cls");
-    printf("\n Espacio Disponible...\n");
-
-    system("pause");
-}
-void funcion16 (nodoArbol* ADL)
-{
-    printf("\n Espacio Disponible...\n");
-
+    scanf("%d", &c.id);
+    borrar = borrarNodoArbol(ADL, c.id);
     system("pause");
 }
 
@@ -499,12 +526,63 @@ void funcion16 (nodoArbol* ADL)
 /////////////////////////////////////////////////////////////////////////////
 //////////////////////FUNCIONES ADL//////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
-void facturarConsumo(nodoArbol* arbol, nodoLista* lista)
+int sumarConsumoPeriodo(nodoArbol* arbol, int mes, int anio)
 {
+    int totalMes = 0;
+    nodoLista* seg = arbol->consumos;
 
+    while(seg)
+    {
+        if((seg->datoConsumo.anio == anio) && (seg->datoConsumo.mes == mes))
+        {
+            totalMes = totalMes + seg->datoConsumo.datosConsumidos;
+
+        }
+        seg = seg->siguiente;
+    }
+    return totalMes;
 }
 
-
+/*********************************************************//**
+*
+* \brief Muestra el ticket con la totalidad de los megas consumidos en el mes seleccionado.
+* \param Un tipo de dato del tipo stConsumos.
+* \param Una variable con el total de datos consumidos.
+* \return Sin retorno, es del tipo void.
+*
+***********************************************************/
+void muestraTicket(stConsumos c, int parcialDatos)
+{
+    puts("\n----------------------------------------");
+    puts("<<<<<<<<<<<<<<Factura>>>>>>>>>>>>>>>>>>>");
+    puts("----------------------------------------\n");
+    printf("\n.....El id Cliente: %d\n", c.id);
+    printf("\n...............Mes: %d\n", c.mes);
+    printf("\n..............Anio: %d\n", c.anio);
+    printf("\n..Datos consumidos: %d Megas\n\n", parcialDatos);
+    puts("\n----------------------------------------");
+    puts("<<<<<<<<<<<<<<<Personal>>>>>>>>>>>>>>>>>");
+    puts("----------------------------------------\n");
+}
+/*********************************************************//**
+*
+* \brief Muestra el ticket con la totalidad de los megas consumidos hasta el momento.
+* \param Un tipo de dato del tipo stConsumos.
+* \param Una variable con el total de datos consumidos.
+* \return Sin retorno, es del tipo void.
+*
+***********************************************************/
+void muestraTicketTotal(stConsumos c, int totalDatos)
+{
+    puts("\n----------------------------------------");
+    puts("<<<<<<<<<<<<<<Factura>>>>>>>>>>>>>>>>>>>");
+    puts("----------------------------------------\n");
+    printf("\n.....El id Cliente: %d\n", c.id);
+    printf("\n..Datos consumidos: %d Megas\n\n", totalDatos);
+    puts("\n----------------------------------------");
+    puts("<<<<<<<<<<<<<<<Personal>>>>>>>>>>>>>>>>>");
+    puts("----------------------------------------\n");
+}
 /*********************************************************//**
 *
 * \brief Busca un cliente en el ADL
