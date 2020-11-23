@@ -118,7 +118,7 @@
 1605927022 c:\users\llorenzo\desktop\git tp final\archivoconsumos.h
 	"archivoClientes.h"
 
-1605927022 c:\users\llorenzo\desktop\git tp final\lista.h
+1606145177 c:\users\llorenzo\desktop\git tp final\lista.h
 	"archivoConsumos.h"
 	"archivoClientes.h"
 
@@ -130,7 +130,7 @@
 	"archivoConsumos.h"
 	<stdio.h>
 
-1606092436 source:c:\users\llorenzo\desktop\git tp final\main.c
+1606144970 source:c:\users\llorenzo\desktop\git tp final\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -143,7 +143,7 @@
 	"utilidades.h"
 	"arbol.h"
 
-1605927022 source:c:\users\llorenzo\desktop\git tp final\lista.c
+1606145177 source:c:\users\llorenzo\desktop\git tp final\lista.c
 	"lista.h"
 	<stdio.h>
 

@@ -425,32 +425,46 @@ void funcion12 (nodoArbol* ADL)
 void funcion13 (nodoArbol* ADL) // Tal vez usemos otra funcion //
 {
     system("cls");
-    int numCli;
+    int id;
     int mes; // del 1 al 12
+    int conMensual;
     nodoArbol* cliente;
     nodoLista* totalDatos;
-    stConsumos con;
-    printf("\n Ingrese el numero de cliente que desea facturar: \n");
+    printf("\n Ingrese el id de cliente que desea facturar: \n");
     fflush(stdin);
-    scanf("%d", &numCli);
+    scanf("%d", &id);
     printf("\n Ingrese el mes, del 1 al 12, que desea facturar: \n");
     fflush(stdin);
     scanf("%d", &mes);
-    cliente = buscarCliente(ADL, numCli);
+    cliente = buscarCliente(ADL, id);
     system("cls");
     mostrarNodoArbol(cliente);
-    if( mes == con.mes ) // no entra en esta condicion..
+    cliente->consumos = buscarNodoConsumo(mes,cliente->consumos);// no funciona bien, es una función nueva de listas
+    printf("\n %d MEGAS\n", cliente->consumos);
+    system("pause");
+
+    totalDatos = sumarConsumosLista(cliente->consumos);
+    system("cls");
+    puts("\n<<<<<<<<<<<<<Factura>>>>>>>>>>>>>>>>>>>");
+    printf("\n.....El id Cliente: %d\n", id);
+    printf("\n...............Mes: %d\n", mes);
+    printf("\n..Datos consumidos: %d\n\n", totalDatos);
+    puts("<<<<<<<<<<<<<<<Movistar>>>>>>>>>>>>>>>>>\n");
+
+    /*while(cliente->consumos)
     {
-        totalDatos = sumarConsumosLista(cliente->consumos);
-        printf("El cliente Numero %d consumio %d megas \n", numCli, totalDatos);
-    }
-    else
-    {
-        printf("El cliente no tuvo consumos en ese periodo...\n");
-    }
+        if(cliente->consumos = cliente->consumos->siguiente)
 
-
-
+            // no entra en esta condicion..
+        {
+            totalDatos = sumarConsumosLista(cliente->consumos);
+            printf("El cliente Numero %d consumio %d megas \n", id, totalDatos);
+        }
+        else
+        {
+            printf("El cliente no tuvo consumos en ese periodo...\n");
+        }
+    }*/
 
     system("pause");
 }
@@ -535,10 +549,8 @@ nodoArbol* alta(nodoArbol *adl, stCliente datoCliente, stConsumos datoConsumos)
 {
     nodoLista *nuevaLista = crearNodo(datoConsumos);
     nodoArbol *busqueda = buscarCliente(adl, datoCliente.id);
-
-    printf("\n1er holis %d", datoConsumos.idCliente);
-    if(busqueda)
-        mostrarNodoArbol(busqueda);
+    //if(busqueda)
+    //    mostrarNodoArbol(busqueda); // si descomento esta funcion, muestra los clientes mientras pasa al arbol
     if (busqueda == NULL)
     {
         nodoArbol *nuevo = crearNodoArbol(datoCliente);
