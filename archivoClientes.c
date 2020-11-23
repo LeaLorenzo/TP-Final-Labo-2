@@ -109,6 +109,7 @@ void mostrarUnCliente(stCliente c)
     if(c.baja == 0)
     {
         printf("\n  ________________________________________________");
+        printf("\n  ID.........................: %d\n",c.id);
         printf("\n  Nro de Cliente.............: %d\n",c.nroCliente);
         printf("\n  Nombre usuario.............: %s\n",c.nombre);
         printf("\n  Apellido usuario...........: %s\n",c.apellido);
@@ -116,6 +117,7 @@ void mostrarUnCliente(stCliente c)
         printf("\n  Domicilio..................: %s\n",c.domicilio);
         printf("\n  Movil......................: %s\n",c.movil);
         printf("\n  Email......................: %s\n",c.email);
+        printf("\n  Baja......................: %d\n",c.baja);
         printf("\n  _______________________________________________");
     }
 
@@ -261,6 +263,26 @@ int buscaPosicion(int id)
         fclose(pArchClientes);
     }
     return pos;
+}
+
+stCliente buscaClienteEnArchivo(int id)
+{
+    int pos = -1;
+    int bandera = 0;
+    stCliente c;
+    FILE *pArchClientes = fopen(arCliente,"rb");
+    if(pArchClientes)
+    {
+        while((bandera==0)&&(fread(&c,sizeof(stCliente),1,pArchClientes)>0))
+        {
+            if(c.id == id)
+            {
+                bandera = 1;
+            }
+        }
+        fclose(pArchClientes);
+    }
+    return c;
 }
 
 /*********************************************************//**

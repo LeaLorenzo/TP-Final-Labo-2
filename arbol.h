@@ -23,6 +23,7 @@ void inOrder(nodoArbol* arbol);
 void postOrder(nodoArbol* arbol);
 nodoArbol* buscarNMI(nodoArbol* arbol);
 nodoArbol* buscarNMD(nodoArbol* arbol);
-nodoArbol* borrarNodoArbol(nodoArbol* arbol, int dato);
+nodoArbol* borrarNodoArbol(nodoArbol* arbol, int idCliente);
+int esHoja(nodoArbol* arbol);
 
 #endif // ARBOL_H_INCLUDED
