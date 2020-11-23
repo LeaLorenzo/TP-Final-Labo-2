@@ -89,17 +89,7 @@ nodoLista* buscarNodo(char apellido[20], nodoLista* lista)
     }
     return seg;
 }
-nodoLista* buscarNodoConsumo(int mes, nodoLista* lista)
-{
-    nodoLista* seg;
-    int suma;
-    seg = lista;
-    while((seg!=NULL)&&(mes == seg->datoConsumo.mes))
-    {
-        seg = seg->siguiente;
-    }
-    return seg;
-}
+
 /*********************************************************//**
 /*
 /* \brief  Agrega un nuevo nodo ya creado al final de la lista
