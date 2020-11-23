@@ -526,6 +526,15 @@ void funcion16 (nodoArbol* ADL) // borrar cliente del arbol
 /////////////////////////////////////////////////////////////////////////////
 //////////////////////FUNCIONES ADL//////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
+/*********************************************************//**
+/*
+/* \brief  Suma los datos consumidos en el periodo seleccionado.
+/* \param  El arbol nodoArbol* puntero a arbol.
+/* \param  Una variable del tipo entero mes.
+/* \param  Una variable del tipo entero anio.
+/* \return Retorna el resultado de la suma.
+/*
+/************************************************************/
 int sumarConsumoPeriodo(nodoArbol* arbol, int mes, int anio)
 {
     int totalMes = 0;
