@@ -68,6 +68,7 @@ void mostrarNodoArbol(nodoArbol* nodo)
 {
     mostrarUnCliente(nodo->dato);
     mostrarListaConsumo(nodo->consumos);
+    sumarConsumosLista(nodo->consumos);
     printf("\n");
 }
 
