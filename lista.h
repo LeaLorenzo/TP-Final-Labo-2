@@ -15,7 +15,6 @@ nodoLista* crearNodo(stConsumos dato);
 nodoLista* agregarPpio(nodoLista* lista, nodoLista* nuevoNodo);
 nodoLista* buscarUltimo(nodoLista* lista);
 nodoLista* buscarNodo(char apellido[], nodoLista* lista);
-nodoLista* buscarNodoConsumo(int mes, nodoLista* lista);
 nodoLista* agregarFinal(nodoLista* lista, nodoLista* nuevoNodo);
 nodoLista* borrarNodo(nodoLista* lista, char apellido[20]);
 nodoLista* agregarEnOrden(nodoLista* lista, nodoLista* nuevoNodo);
