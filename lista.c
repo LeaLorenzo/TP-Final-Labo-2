@@ -89,7 +89,17 @@ nodoLista* buscarNodo(char apellido[20], nodoLista* lista)
     }
     return seg;
 }
-
+nodoLista* buscarNodoConsumo(int mes, nodoLista* lista)
+{
+    nodoLista* seg;
+    int suma;
+    seg = lista;
+    while((seg!=NULL)&&(mes == seg->datoConsumo.mes))
+    {
+        seg = seg->siguiente;
+    }
+    return seg;
+}
 /*********************************************************//**
 /*
 /* \brief  Agrega un nuevo nodo ya creado al final de la lista
@@ -163,7 +173,7 @@ nodoLista* agregarEnOrden(nodoLista* lista, nodoLista* nuevoNodo)
     }
     else
     {
-        if(strcmp(nuevoNodo->datoCliente.apellido, lista->datoCliente.apellido) < 0)
+        if(nuevoNodo->datoCliente.id < lista->datoCliente.id)
         {
             lista = agregarPpio(lista, nuevoNodo);
         }
@@ -171,7 +181,7 @@ nodoLista* agregarEnOrden(nodoLista* lista, nodoLista* nuevoNodo)
         {
             nodoLista* ante = lista;
             nodoLista* seg = lista->siguiente;
-            while((seg!=NULL) && (strcmp(nuevoNodo->datoCliente.apellido, seg->datoCliente.apellido)) > 0)
+            while((seg!=NULL) && (nuevoNodo->datoCliente.apellido > seg->datoCliente.apellido))
             {
                 ante = seg;
                 seg = seg->siguiente;

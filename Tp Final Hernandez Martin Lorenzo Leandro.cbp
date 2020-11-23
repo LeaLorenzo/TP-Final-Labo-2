@@ -58,6 +58,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="pila.h" />
+		<Unit filename="registro.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="registro.h" />
 		<Unit filename="utilidades.c">
 			<Option compilerVar="CC" />
 		</Unit>
