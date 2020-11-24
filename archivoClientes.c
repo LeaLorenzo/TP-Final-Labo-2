@@ -265,6 +265,13 @@ int buscaPosicion(int id)
     return pos;
 }
 
+/*********************************************************//**
+*
+* \brief Busca Cliente en Archivo
+* \param Variable del tipo int id
+* \return Retorna un cliente.
+*
+***********************************************************/
 stCliente buscaClienteEnArchivo(int id)
 {
     int pos = -1;
@@ -436,6 +443,12 @@ void consultarCliente(int id)
     }
 }
 
+/*********************************************************//**
+*
+* \brief Genera un Cliente Random
+* \return Retorna el numero de la id.
+*
+***********************************************************/
 int generarRandomCliente()
 {
 

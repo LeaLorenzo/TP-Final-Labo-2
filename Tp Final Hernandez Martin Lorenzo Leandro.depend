@@ -104,33 +104,33 @@
 	<stdio.h>
 	<malloc.h>
 
-1606090252 source:c:\users\llorenzo\desktop\git tp final\arbol.c
+1606250348 source:c:\users\llorenzo\desktop\git tp final\arbol.c
 	"arbol.h"
 	<stdio.h>
 
-1605927022 c:\users\llorenzo\desktop\git tp final\arbol.h
+1606167251 c:\users\llorenzo\desktop\git tp final\arbol.h
 	"archivoClientes.h"
 	"lista.h"
 
-1605988191 c:\users\llorenzo\desktop\git tp final\archivoclientes.h
+1606251232 c:\users\llorenzo\desktop\git tp final\archivoclientes.h
 	"archivoConsumos.h"
 
 1605927022 c:\users\llorenzo\desktop\git tp final\archivoconsumos.h
 	"archivoClientes.h"
 
-1606163800 c:\users\llorenzo\desktop\git tp final\lista.h
+1606167269 c:\users\llorenzo\desktop\git tp final\lista.h
 	"archivoConsumos.h"
 	"archivoClientes.h"
 
-1605988191 source:c:\users\llorenzo\desktop\git tp final\archivoclientes.c
+1606250348 source:c:\users\llorenzo\desktop\git tp final\archivoclientes.c
 	"archivoClientes.h"
 	<stdio.h>
 
-1605927022 source:c:\users\llorenzo\desktop\git tp final\archivoconsumos.c
+1606250348 source:c:\users\llorenzo\desktop\git tp final\archivoconsumos.c
 	"archivoConsumos.h"
 	<stdio.h>
 
-1606165681 source:c:\users\llorenzo\desktop\git tp final\main.c
+1606254821 source:c:\users\llorenzo\desktop\git tp final\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -143,21 +143,21 @@
 	"utilidades.h"
 	"arbol.h"
 
-1606163800 source:c:\users\llorenzo\desktop\git tp final\lista.c
+1606167269 source:c:\users\llorenzo\desktop\git tp final\lista.c
 	"lista.h"
 	<stdio.h>
 
-1605927022 source:c:\users\llorenzo\desktop\git tp final\utilidades.c
+1606250907 source:c:\users\llorenzo\desktop\git tp final\utilidades.c
 	"utilidades.h"
 
-1605927022 c:\users\llorenzo\desktop\git tp final\utilidades.h
+1606167251 c:\users\llorenzo\desktop\git tp final\utilidades.h
 	"archivoConsumos.h"
 	"archivoClientes.h"
 
-1605927022 source:c:\users\llorenzo\desktop\git tp final\registro.c
+1606167251 source:c:\users\llorenzo\desktop\git tp final\registro.c
 	"registro.h"
 
-1605927022 c:\users\llorenzo\desktop\git tp final\registro.h
+1606167251 c:\users\llorenzo\desktop\git tp final\registro.h
 
 1605977795 source:d:\techmdq\downloads\tp-final-labo-2-leabranch\arbol.c
 	"arbol.h"
