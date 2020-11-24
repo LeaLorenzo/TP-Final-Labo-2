@@ -1,7 +1,13 @@
 #include "archivoConsumos.h"
 #include <stdio.h>
 
-
+/*********************************************************//**
+*
+* \brief Guarda un Consumo
+* \param Variable del tipo struct Cliente
+* \return No retorna nada, es del tipo void.
+*
+***********************************************************/
 void guardaUnConsumo(stConsumos c)
 {
     FILE *pArchConsumos = fopen(arConsumos, "ab");
@@ -12,7 +18,14 @@ void guardaUnConsumo(stConsumos c)
     }
 }
 
-
+/*********************************************************//**
+*
+* \brief Busca un Consumo
+* \param Variable del tipo entero mes.
+* \param Variable del tipo entero idCliente.
+* \return Rertorna el consumo del mes.
+*
+***********************************************************/
 int buscarConsumo (int mes, int idCliente)
 {
     stConsumos consumo;
@@ -28,14 +41,18 @@ int buscarConsumo (int mes, int idCliente)
                 consumoDelMes += consumo.datosConsumidos;
             }
         }
-
-
         fclose(pArchConsumos);
-        return consumoDelMes;
     }
+    return consumoDelMes;
 }
 
-
+/*********************************************************//**
+*
+* \brief Pasa un Consumo a un archivo
+* \param Variable del tipo struct consumos
+* \return No retorna nada, tipo void.
+*
+***********************************************************/
 void pasarConsumoArchivo(stConsumos c[])
 {
     int i = 0;
@@ -46,7 +63,12 @@ void pasarConsumoArchivo(stConsumos c[])
 }
 
 
-
+/*********************************************************//**
+*
+* \brief Busca ultimo id Consumo
+* \return Rertorna el id.
+*
+***********************************************************/
 int buscaUltimoIdConsumos()
 {
     stConsumos c;
@@ -64,6 +86,13 @@ int buscaUltimoIdConsumos()
     return id;
 }
 
+/*********************************************************//**
+*
+* \brief Carga el Consumo
+* \param Variable del tipo entero id.
+* \return Rertorna el consumo.
+*
+***********************************************************/
 void cargarConsumos(int id)
 {
     stConsumos c;
@@ -99,6 +128,14 @@ void cargarConsumos(int id)
     return c;
 }
 
+/*********************************************************//**
+*
+* \brief Verifica el dia del mes
+* \param Variable del tipo entero mes.
+* \param Variable del tipo entero anio.
+* \return Rertorna el dia.
+*
+***********************************************************/
 int verificarDiasMes(int mes, int anio)
 {
     int dias;
@@ -150,6 +187,12 @@ int verificarDiasMes(int mes, int anio)
     return dias;
 }
 
+/*********************************************************//**
+*
+* \brief Muestra archivo de Consumos.
+* \return Sin Retorno, es del tipo Void.
+*
+***********************************************************/
 void muestraArchConsumos()
 {
     stConsumos c;
@@ -165,6 +208,13 @@ void muestraArchConsumos()
     printf("\n");
 }
 
+/*********************************************************//**
+*
+* \brief Muestra un Consumo.
+* \param Variable del tipo struct consumo.
+* \return Sin Retorno, es del tipo Void.
+*
+***********************************************************/
 void mostrarUnConsumo(stConsumos c)
 {
     if(c.baja == 0)
@@ -179,6 +229,13 @@ void mostrarUnConsumo(stConsumos c)
     }
 }
 
+/*********************************************************//**
+*
+* \brief Baja de un Consumo.
+* \param Variable del tipo entero id.
+* \return Sin Retorno, es del tipo Void.
+*
+***********************************************************/
 void bajaConsumos(int id)
 {
 
@@ -213,6 +270,13 @@ void bajaConsumos(int id)
     }
 }
 
+/*********************************************************//**
+*
+* \brief Modifica un Consumo.
+* \param Variable del tipo entero id.
+* \return Sin Retorno, es del tipo Void.
+*
+***********************************************************/
 void modificarConsumo(int id) /// MODIFICACION ///
 {
     stConsumos c;
@@ -237,6 +301,13 @@ void modificarConsumo(int id) /// MODIFICACION ///
     }
 }
 
+/*********************************************************//**
+*
+* \brief Modifica dato Consumo.
+* \param Variable del tipo struct consumo.
+* \return Retorna el dato seleccionado para modificar.
+*
+***********************************************************/
 int modificarDatoConsumo(stConsumos c)
 {
     int seleccion;
@@ -256,6 +327,13 @@ int modificarDatoConsumo(stConsumos c)
     return seleccion;
 }
 
+/*********************************************************//**
+*
+* \brief Sub Menu Consumos.
+* \param Variable del tipo struct consumo.
+* \return Retorna el dato seleccionado consumo.
+*
+***********************************************************/
 stConsumos subMenuConsumo(stConsumos consumo)
 {
     int seleccion;
@@ -308,6 +386,12 @@ stConsumos subMenuConsumo(stConsumos consumo)
     return c;
 }
 
+/*********************************************************//**
+*
+* \brief Genera un numero random.
+* \return Retorna el numero.
+*
+***********************************************************/
 int generarRandomConsumo()
 {
     int numero = rand()%500;

@@ -1,6 +1,12 @@
 #include "utilidades.h"
 
-
+/*********************************************************//**
+/*
+/* \brief  Consulta Cliente para cargar consumo.
+/* \param  Una variable del tipo entero id.
+/* \return No retorna nada, es de tipo void.
+/*
+/************************************************************/
 void consultarClienteParaCargarConsumo(int id)
 {
     stCliente c;
@@ -15,7 +21,12 @@ void consultarClienteParaCargarConsumo(int id)
 
 }
 
-
+/*********************************************************//**
+/*
+/* \brief  Genera el mes random.
+/* \return Retorna el mes.
+/*
+/************************************************************/
 int generarRandomMes()
 {
 
@@ -25,6 +36,12 @@ int generarRandomMes()
     return mes;
 }
 
+/*********************************************************//**
+/*
+/* \brief  Genera el dia random.
+/* \return Retorna el dia.
+/*
+/************************************************************/
 int generarRandomDia(int mes, int anio)
 {
 
@@ -34,6 +51,13 @@ int generarRandomDia(int mes, int anio)
     return dia;
 }
 
+/*********************************************************//**
+/*
+/* \brief  Carga mil consumos random.
+/* \param  Una variable del tipo struct consumos.
+/* \return No retorna nada, es del tipo void.
+/*
+/************************************************************/
 void cargarMilConsumos(stConsumos c[])
 {
 
@@ -58,12 +82,31 @@ void cargarMilConsumos(stConsumos c[])
     }
 }
 
-int randomRango(int min, int max){
+/*********************************************************//**
+/*
+/* \brief  Carga el rango random.
+/* \param  Una variable del tipo entero minimo.
+/* \param  Una variable del tipo entero maximo.
+/* \return Retorna el rango.
+/*
+/************************************************************/
+int randomRango(int min, int max)
+{
     return rand()%(max-min)+min;
 }
 
-void replicante(char c, int n){
-    for(int i=0;i<n;i++){
+/*********************************************************//**
+/*
+/* \brief  Replicante.
+/* \param  Una variable del tipo char c.
+/* \param  Una variable del tipo entero n.
+/* \return No retorna nada, es del tipo void.
+/*
+/************************************************************/
+void replicante(char c, int n)
+{
+    for(int i=0; i<n; i++)
+    {
         printf("%c",c);
     }
 }
